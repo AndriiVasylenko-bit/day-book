@@ -76,5 +76,32 @@ namespace DayBook
 
         }
 
+        public string Record()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                string[] surname = new string[5];
+                {
+                    Console.Write("Введите фамилию: ");
+                    surname[i] = Console.ReadLine();
+                }
+                string[] name = new string[5];
+                {
+                    Console.Write("Введите имя: ");
+                    name[i] = Console.ReadLine();
+                }
+                string[] patronymic = new string[5];
+                {
+                    Console.Write("Введите отчество: ");
+                    patronymic[i] = Console.ReadLine();
+                }
+                Student student = new Student(surname[i], name[i], patronymic[i]);
+
+                Console.WriteLine($"Студент: {student.FullName}\n");
+            }
+            return "1";
+        }
     }
+
+    
 }

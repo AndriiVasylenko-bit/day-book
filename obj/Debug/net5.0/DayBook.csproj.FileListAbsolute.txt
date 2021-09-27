@@ -13,3 +13,19 @@ D:\livek\C#\Lessons\Lesson 8\Lesson 8\obj\Debug\net5.0\DayBook.dll
 D:\livek\C#\Lessons\Lesson 8\Lesson 8\obj\Debug\net5.0\ref\DayBook.dll
 D:\livek\C#\Lessons\Lesson 8\Lesson 8\obj\Debug\net5.0\DayBook.pdb
 D:\livek\C#\Lessons\Lesson 8\Lesson 8\obj\Debug\net5.0\DayBook.genruntimeconfig.cache
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.exe
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.deps.json
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.runtimeconfig.json
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.runtimeconfig.dev.json
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.dll
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\ref\DayBook.dll
+D:\livek\C#\GIT\DayBook\bin\Debug\net5.0\DayBook.pdb
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.csproj.AssemblyReference.cache
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.AssemblyInfoInputs.cache
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.AssemblyInfo.cs
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.csproj.CoreCompileInputs.cache
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.dll
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\ref\DayBook.dll
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.pdb
+D:\livek\C#\GIT\DayBook\obj\Debug\net5.0\DayBook.genruntimeconfig.cache

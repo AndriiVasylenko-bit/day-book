@@ -9,5 +9,7 @@ namespace DayBook
     class Group
     {
         private string groupNumber;
+
+        
     }
 }

@@ -19,7 +19,7 @@ namespace DayBook
             Record();
         }
 
-        public static string Record()
+        public static void Record()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -40,9 +40,20 @@ namespace DayBook
                 }
                 Student student = new Student(surname[i], name[i], patronymic[i]);
 
-                Console.WriteLine($"Студент: {student.FullName}\n");
+                string[] grade = new string[5];
+                {
+                    Console.Write("Введите оценку: ");
+                    if (int.TryParse(Console.ReadLine(), out int result))
+                    {
+                        grade[i] = Convert.ToString(result);
+                    }
+                }
+                Progress progress = new Progress(grade[i]);
+
+
+
+                Console.WriteLine($"Студент: {student.FullName} {progress.StudentProgress}\n");
             }
-            return "Даные добавлены.";
         }
     }
 }

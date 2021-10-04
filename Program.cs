@@ -40,19 +40,36 @@ namespace DayBook
                 }
                 Student student = new Student(surname[i], name[i], patronymic[i]);
 
-                string[] grade = new string[5];
+                int[] grade = new int[5];
                 {
                     Console.Write("Введите оценку: ");
                     if (int.TryParse(Console.ReadLine(), out int result))
                     {
-                        grade[i] = Convert.ToString(result);
+                        grade[i] = result;
+                    }
+                    else
+                    {
+                        throw new ArgumentNullException("поле должно содержать числовое значение");
                     }
                 }
                 Progress progress = new Progress(grade[i]);
 
 
+                int[] category = new int[5];
+                {
+                    Console.Write("Введите группу: ");
+                    if (int.TryParse(Console.ReadLine(), out int result))
+                    {
+                        category[i] = result;
+                    }
+                    else
+                    {
+                        throw new ArgumentNullException("поле должно содержать числовое значение");
+                    }
+                }
+                Group group = new Group(category[i]);
 
-                Console.WriteLine($"Студент: {student.FullName} {progress.StudentProgress}\n");
+                Console.WriteLine($"СТУДЕНТ: {student.FullName} ОЦЕНКА: {progress.StudentProgress} № ГРУППА: {group.GroupNumber}\n");
             }
         }
     }

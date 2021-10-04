@@ -10,24 +10,21 @@ namespace DayBook
     {
         private int studentProgress;
 
-        public Progress (string progress)
+        public Progress (int progress)
         {
-            StudentProgress = Convert.ToInt32(progress);
+            StudentProgress = progress;
         }
 
         public int StudentProgress
         {
+            
             get
             {
                 return studentProgress;
             }
             set
             {
-                if (string.IsNullOrWhiteSpace(Convert.ToString(value)))
-                {
-                    throw new ArgumentNullException("Поле оценок студента не может быть пустым.");
-                }
-                studentProgress = Convert.ToInt32(value);
+                studentProgress = StudentProgress;               
             }
         }
 

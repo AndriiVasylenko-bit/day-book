@@ -8,25 +8,7 @@ namespace DayBook
 {
     class Progress
     {
-        private int studentProgress;
-
-        public Progress (int progress)
-        {
-            StudentProgress = progress;
-        }
-
-        public int StudentProgress
-        {
-            
-            get
-            {
-                return studentProgress;
-            }
-            set
-            {
-                studentProgress = StudentProgress;               
-            }
-        }
-
+        public int StudentProgress { get; set; }
+        public Progress(int progress) => StudentProgress = progress;
     }
 }

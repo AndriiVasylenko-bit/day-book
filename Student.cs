@@ -19,20 +19,11 @@ namespace DayBook
             StudentPatronymic = Patronymic;
         }
 
-        public string FullName
-        {
-            get
-            {
-                return $"{studentSurname} {studentName.Substring(0, 1)}. {studentPatronymic.Substring(0, 1)}.";
-            }
-        }
+        public string FullName => $"{studentSurname} {studentName.Substring(0, 1)}. {studentPatronymic.Substring(0, 1)}.";
 
         public string StudentSurname
         {
-            get
-            {
-                return studentSurname;
-            }
+            get => studentSurname;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -45,10 +36,7 @@ namespace DayBook
 
         public string StudentName
         {
-            get
-            {
-                return studentName;
-            }
+            get => studentName;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -61,10 +49,7 @@ namespace DayBook
 
         public string StudentPatronymic
         {
-            get
-            {
-                return studentPatronymic;
-            }
+            get => studentPatronymic;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))

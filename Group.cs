@@ -8,24 +8,7 @@ namespace DayBook
 {
     class Group
     {
-        private int groupNumber;
-
-        
-        public Group (int group)
-        {
-            GroupNumber = group;
-        }
-
-        public int GroupNumber
-        {
-            get
-            {
-                return groupNumber;
-            }
-            set
-            {
-                 groupNumber = GroupNumber;
-            }
-        }
+        public int GroupNumber { get; set; }
+        public Group(int group) => GroupNumber = group;
     }
 }

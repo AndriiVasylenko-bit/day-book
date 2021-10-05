@@ -13,4 +13,4 @@
 	* виведення на дисплей прізвищ і номерів груп для всіх студентів, включених до масиву, якщо середній бал студента більший ніж 4.0; якщо таких студентів немає, вивести відповідне повідомлення.
 	* реалізувати пошук інформації по не повному прізвищу
 
-![](//https://www.google.com/url?sa=i&url=http%3A%2F%2Fjoyreactor.cc%2Ftag%2Fgithub%2Fnew%2F1&psig=AOvVaw3ueCkchFKSQNIDeecSR1pu&ust=1633541037921000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLDzk9zks_MCFQAAAAAdAAAAABAV)
+![](//https://cs9.pikabu.ru/post_img/2020/01/28/6/1580203334177027736.webp)

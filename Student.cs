@@ -11,25 +11,11 @@ namespace DayBook
         public Progress Progress { get; set; }
         public Group Group { get; set; }
 
-<<<<<<< HEAD
-        public string FullName
-        {
-            get
-            {
-                return $"{_surname} {_name} {_patronymic}";
-            }
-        }
+        public string FullName => $"{_surname} {_name} {_patronymic}";
 
-        public string StudentSurname
+        public string Surname
         {
-            get =>_surname;
-=======
-        public string FullName => $"{studentSurname} {studentName.Substring(0, 1)}. {studentPatronymic.Substring(0, 1)}.";
-
-        public string StudentSurname
-        {
-            get => studentSurname;
->>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
+            get => _surname;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -40,13 +26,9 @@ namespace DayBook
             }
         }
 
-        public string StudentName
+        public string Name
         {
-<<<<<<< HEAD
             get =>_name;
-=======
-            get => studentName;
->>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -57,13 +39,9 @@ namespace DayBook
             }
         }
 
-        public string StudentPatronymic
+        public string Patronymic
         {
-<<<<<<< HEAD
             get => _patronymic;
-=======
-            get => studentPatronymic;
->>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -76,9 +54,9 @@ namespace DayBook
 
         public Student(string surname, string name, string patronymic, Group group, Progress progress)
         {
-            StudentSurname = surname;
-            StudentName = name;
-            StudentPatronymic = patronymic;
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
             Group = group;
             Progress = progress;
         }

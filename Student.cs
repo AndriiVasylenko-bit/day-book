@@ -11,6 +11,7 @@ namespace DayBook
         public Progress Progress { get; set; }
         public Group Group { get; set; }
 
+<<<<<<< HEAD
         public string FullName
         {
             get
@@ -22,6 +23,13 @@ namespace DayBook
         public string StudentSurname
         {
             get =>_surname;
+=======
+        public string FullName => $"{studentSurname} {studentName.Substring(0, 1)}. {studentPatronymic.Substring(0, 1)}.";
+
+        public string StudentSurname
+        {
+            get => studentSurname;
+>>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -34,7 +42,11 @@ namespace DayBook
 
         public string StudentName
         {
+<<<<<<< HEAD
             get =>_name;
+=======
+            get => studentName;
+>>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -47,7 +59,11 @@ namespace DayBook
 
         public string StudentPatronymic
         {
+<<<<<<< HEAD
             get => _patronymic;
+=======
+            get => studentPatronymic;
+>>>>>>> b11852c808e538b64e5e3e457cd2d518091aa176
             set
             {
                 if (string.IsNullOrWhiteSpace(value))

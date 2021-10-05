@@ -1,79 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DayBook
 {
     class Student
     {
-        private string studentSurname;
-        private string studentName;
-        private string studentPatronymic;
-
-        public Student(string Surname, string Name, string Patronymic)
-        {
-            StudentSurname = Surname;
-            StudentName = Name;
-            StudentPatronymic = Patronymic;
-        }
+        private string _surname;
+        private string _name;
+        private string _patronymic;
+        
+        public Progress Progress { get; set; }
+        public Group Group { get; set; }
 
         public string FullName
         {
             get
             {
-                return $"{studentSurname} {studentName.Substring(0, 1)}. {studentPatronymic.Substring(0, 1)}.";
+                return $"{_surname} {_name} {_patronymic}";
             }
         }
 
         public string StudentSurname
         {
-            get
-            {
-                return studentSurname;
-            }
+            get =>_surname;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Фамилия студента не может быть пустым.");
                 }
-                studentSurname = value;
+                _surname = value;
             }
         }
 
         public string StudentName
         {
-            get
-            {
-                return studentName;
-            }
+            get =>_name;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Имя студента не может быть путсым.");
                 }
-                studentName = value;
+                _name = value;
             }
         }
 
         public string StudentPatronymic
         {
-            get
-            {
-                return studentPatronymic;
-            }
+            get => _patronymic;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Отчество студента не может быть путсым.");
                 }
-                studentPatronymic = value;
+                _patronymic = value;
             }
+        }
 
+        public Student(string surname, string name, string patronymic, Group group, Progress progress)
+        {
+            StudentSurname = surname;
+            StudentName = name;
+            StudentPatronymic = patronymic;
+            Group = group;
+            Progress = progress;
         }
     }
 }

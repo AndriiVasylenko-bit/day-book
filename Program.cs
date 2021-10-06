@@ -4,62 +4,79 @@ namespace DayBook
 {
     internal class Program
     {
+        Student[] student = new Student[2];
+
+        string surname;
+        string name;
+        string patronymic;
+        int grade;
+        int category;
+
+
         private static void Main()
         {
-            Record();
+            Program program = new Program();
+            program.generateArray();
+            Console.WriteLine();
+            program.printArray();
+            program.bobbleSort();
+            Console.WriteLine();
+            program.printArray();
         }
 
-        public static void Record()
+
+        public void generateArray()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < student.Length; i++)
             {
-                string[] surname = new string[5];
+                Console.Write("Введите фамилию: ");
+                surname = Console.ReadLine();
+
+                Console.Write("Введите имя: ");
+                name = Console.ReadLine();
+
+                Console.Write("Введите отчество: ");
+                patronymic = Console.ReadLine();
+
+                Console.Write("Введите оценку: ");
+                if (!int.TryParse(Console.ReadLine(), out grade))
                 {
-                    Console.Write("Введите фамилию: ");
-                    surname[i] = Console.ReadLine();
+                    throw new ArgumentNullException("поле должно содержать числовое значение");
                 }
 
-                string[] name = new string[5];
+                Console.Write("Введите группу: ");
+                if (!int.TryParse(Console.ReadLine(), out category))
                 {
-                    Console.Write("Введите имя: ");
-                    name[i] = Console.ReadLine();
+                    throw new ArgumentNullException("поле должно содержать числовое значение");
                 }
 
-                string[] patronymic = new string[5];
-                {
-                    Console.Write("Введите отчество: ");
-                    patronymic[i] = Console.ReadLine();
-                }
+                Console.WriteLine();
+                student[i] = new (surname, name, patronymic, grade, category);
+            }
+        }
 
-                int[] grade = new int[5];
+        public void printArray()
+        {
+            Console.WriteLine();
+            for (int i = 0; i < student.Length; i++)
+            {
+               Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
+            } 
+        }
+
+        public void bobbleSort()
+        {
+            for (int i = 0; i < student.Length; i++)
+            {
+                for (int j = i + 1; j < student.Length; j++)
                 {
-                    Console.Write("Введите оценку: ");
-                    if (int.TryParse(Console.ReadLine(), out int result))
+                    if (student[i].GroupNumber > student[j].GroupNumber)
                     {
-                        grade[i] = result;
-                    }
-                    else
-                    {
-                        throw new ArgumentNullException("поле должно содержать числовое значение");
+                        string t = student[i].FullStudent;
+                        student[i].FullStudent = student[j].FullStudent;
+                        student[j].FullStudent = t;
                     }
                 }
-
-                int[] category = new int[5];
-                {
-                    Console.Write("Введите группу: ");
-                    if (int.TryParse(Console.ReadLine(), out int result))
-                    {
-                        category[i] = result;
-                    }
-                    else
-                    {
-                        throw new ArgumentNullException("поле должно содержать числовое значение");
-                    }
-                }
-
-                Student student = new(surname[i], name[i], patronymic[i], new Group(category[i]), new Progress(grade[i]));
-
-                Console.WriteLine($"СТУДЕНТ: {student.FullName} ОЦЕНКА: {student.Progress} № ГРУППА: {student.Group}\n");
             }
         }
     }

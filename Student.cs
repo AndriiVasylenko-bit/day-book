@@ -7,11 +7,21 @@ namespace DayBook
         private string _surname;
         private string _name;
         private string _patronymic;
-        
-        public Progress Progress { get; set; }
-        public Group Group { get; set; }
 
-        public string FullName => $"{_surname} {_name} {_patronymic}";
+        public int StudentProgress { get; set; }
+        public int GroupNumber { get; set; }
+
+
+
+        public string FullStudent
+        {
+            get
+            {
+                string v = $"{_surname} {_name} {_patronymic} ОЦЕНКА: {StudentProgress} ГРУППА: {GroupNumber}";
+                return v;
+            }
+            set { }
+        }
 
         public string Surname
         {
@@ -52,13 +62,13 @@ namespace DayBook
             }
         }
 
-        public Student(string surname, string name, string patronymic, Group group, Progress progress)
+        public Student(string surname, string name, string patronymic, int progress, int group)
         {
             Surname = surname;
             Name = name;
             Patronymic = patronymic;
-            Group = group;
-            Progress = progress;
+            StudentProgress = progress;
+            GroupNumber = group;
         }
     }
 }

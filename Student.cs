@@ -10,18 +10,10 @@ namespace DayBook
 
         public int StudentProgress { get; set; }
         public int GroupNumber { get; set; }
+        
 
 
-
-        public string FullStudent
-        {
-            get
-            {
-                string v = $"{_surname} {_name} {_patronymic} ОЦЕНКА: {StudentProgress} ГРУППА: {GroupNumber}";
-                return v;
-            }
-            set { }
-        }
+        public string FullStudent =>($"{_surname} {_name} {_patronymic} ОЦЕНКА: {StudentProgress} ГРУППА: {GroupNumber}");
 
         public string Surname
         {

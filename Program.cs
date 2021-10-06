@@ -22,6 +22,8 @@ namespace DayBook
             program.bobbleSort();
             Console.WriteLine();
             program.printArray();
+            Console.WriteLine();
+            program.printUnderNumber();
         }
 
 
@@ -51,7 +53,7 @@ namespace DayBook
                 }
 
                 Console.WriteLine();
-                student[i] = new (surname, name, patronymic, grade, category);
+                student[i] = new(surname, name, patronymic, grade, category);
             }
         }
 
@@ -60,8 +62,8 @@ namespace DayBook
             Console.WriteLine();
             for (int i = 0; i < student.Length; i++)
             {
-               Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
-            } 
+                Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
+            }
         }
 
         public void bobbleSort()
@@ -72,12 +74,45 @@ namespace DayBook
                 {
                     if (student[i].GroupNumber > student[j].GroupNumber)
                     {
-                        string t = student[i].FullStudent;
-                        student[i].FullStudent = student[j].FullStudent;
-                        student[j].FullStudent = t;
+                        string t = student[i].Surname;
+                        student[i].Surname = student[j].Surname;
+                        student[j].Surname = t;
+
+                        string r = student[i].Name;
+                        student[i].Name = student[j].Name;
+                        student[j].Name = r;
+
+                        string e = student[i].Patronymic;
+                        student[i].Patronymic = student[j].Patronymic;
+                        student[j].Patronymic = e;
+
+                        int w = student[i].StudentProgress;
+                        student[i].StudentProgress = student[j].StudentProgress;
+                        student[j].StudentProgress = w;
+
+                        int q = student[i].GroupNumber;
+                        student[i].GroupNumber = student[j].GroupNumber;
+                        student[j].GroupNumber = q;
                     }
                 }
             }
+        }
+
+
+        public void printUnderNumber()
+        {
+            for (int i = 0; i < student.Length; i++)
+            {
+                if (student[i].StudentProgress > 4)
+                {
+                    Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
+                }
+            }
+
+
+
+
+
         }
     }
 }

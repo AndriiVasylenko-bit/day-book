@@ -4,7 +4,7 @@ namespace DayBook
 {
     internal class Program
     {
-        Student[] student = new Student[2];
+        Student[] student = new Student[5];
 
         string surname;
         string name;
@@ -24,6 +24,9 @@ namespace DayBook
             program.printArray();
             Console.WriteLine();
             program.printUnderNumber();
+            Console.WriteLine();
+            program.searchStudent();
+            Console.ReadKey();
         }
 
 
@@ -59,7 +62,6 @@ namespace DayBook
 
         public void printArray()
         {
-            Console.WriteLine();
             for (int i = 0; i < student.Length; i++)
             {
                 Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
@@ -108,11 +110,22 @@ namespace DayBook
                     Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
                 }
             }
-
-
-
-
-
         }
+
+        public void searchStudent()
+        {
+            Console.Write("Найти студента по фамилие: ");
+            string s = Console.ReadLine();
+            for (int i = 0; i < student.Length; i++)
+            {
+                if (s.Equals(student[i].Surname, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
+                }
+            }
+                
+        }
+
+
     }
 }

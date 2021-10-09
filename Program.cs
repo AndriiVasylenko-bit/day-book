@@ -5,7 +5,6 @@ namespace DayBook
     internal class Program
     {
         private Student[] student = new Student[2];
-        Student[] student = new Student[5];
 
         private string surname;
         private string name;
@@ -18,8 +17,6 @@ namespace DayBook
         {
             Program program = new Program();
             program.generateArray();
-            Console.WriteLine();
-            program.printArray();
             program.bobbleSort();
             Console.WriteLine();
             program.printArray();
@@ -35,22 +32,22 @@ namespace DayBook
         {
             for (int i = 0; i < student.Length; i++)
             {
-                Console.Write("Введите фамилию: ");
+                Console.Write("ВВЕДИТЕ ФАМИЛИЮ: ");
                 surname = Console.ReadLine();
 
-                Console.Write("Введите имя: ");
+                Console.Write("ВВЕДИТЕ ИМЯ: ");
                 name = Console.ReadLine();
 
-                Console.Write("Введите отчество: ");
+                Console.Write("ВВЕДИТЕ ОТЧЕСТВО: ");
                 patronymic = Console.ReadLine();
 
-                Console.Write("Введите оценку: ");
+                Console.Write("ВВЕДИТЕ ОЦЕНКУ: ");
                 if (!int.TryParse(Console.ReadLine(), out grade))
                 {
                     throw new ArgumentNullException("поле должно содержать числовое значение");
                 }
 
-                Console.Write("Введите группу: ");
+                Console.Write("ВВЕДИТЕ ГРУППУ: ");
                 if (!int.TryParse(Console.ReadLine(), out category))
                 {
                     throw new ArgumentNullException("поле должно содержать числовое значение");
@@ -104,26 +101,32 @@ namespace DayBook
 
         private void PrintUnderNumber()
         {
+            Console.WriteLine("СТУДЕНТЫ С ОЦЕНКОЙ БОЛЬШЕ 4");
+            Console.WriteLine();
+            bool x = true;
             for (int i = 0; i < student.Length; i++)
             {
                 if (student[i].StudentProgress > 4)
                 {
                     Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
+                    x = false;
                 }
             }
+            if (x) { Console.WriteLine("таких студентов нет"); }
         }
 
         public void searchStudent()
         {
-            Console.Write("Найти студента по фамилие: ");
+            Console.WriteLine();
+            Console.Write("Найти студента: ");
             string s = Console.ReadLine();
             for (int i = 0; i < student.Length; i++)
             {
-                if (s.Equals(student[i].Surname, StringComparison.CurrentCultureIgnoreCase))
+                if (s.Equals(student[i].Surname, StringComparison.CurrentCultureIgnoreCase) || s.Equals(student[i].Name, StringComparison.CurrentCultureIgnoreCase) || s.Equals(student[i].Patronymic, StringComparison.CurrentCultureIgnoreCase))
                 {
+                    Console.WriteLine();
                     Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
                 }
-            }  
         }
     }
 }

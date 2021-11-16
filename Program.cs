@@ -4,13 +4,13 @@ namespace DayBook
 {
     internal class Program
     {
-        Student[] student = new Student[2];
+        private Student[] student = new Student[2];
 
-        string surname;
-        string name;
-        string patronymic;
-        int grade;
-        int category;
+        private string surname;
+        private string name;
+        private string patronymic;
+        private int grade;
+        private int category;
 
 
         private static void Main()
@@ -28,7 +28,7 @@ namespace DayBook
         }
 
 
-        public void generateArray()
+        private void GenerateArray()
         {
             for (int i = 0; i < student.Length; i++)
             {
@@ -52,7 +52,7 @@ namespace DayBook
             }
         }
 
-        public void printArray()
+        private void PrintArray()
         {
             for (int i = 0; i < student.Length; i++)
             {
@@ -60,7 +60,7 @@ namespace DayBook
             }
         }
 
-        public void bobbleSort()
+        private void BubbleSort()
         {
             for (int i = 0; i < student.Length; i++)
             {
@@ -93,7 +93,7 @@ namespace DayBook
         }
 
 
-        public void printUnderNumber()
+        private void PrintUnderNumber()
         {
             Console.WriteLine("СТУДЕНТЫ С ОЦЕНКОЙ БОЛЬШЕ 4");
             Console.WriteLine();
@@ -121,10 +121,6 @@ namespace DayBook
                     Console.WriteLine();
                     Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
                 }
-            }
-
         }
-
-
     }
 }

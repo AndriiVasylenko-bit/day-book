@@ -42,16 +42,10 @@ namespace DayBook
                 patronymic = Console.ReadLine();
 
                 Console.Write("ВВЕДИТЕ ОЦЕНКУ: ");
-                if (!int.TryParse(Console.ReadLine(), out grade))
-                {
-                    throw new ArgumentNullException("поле должно содержать числовое значение");
-                }
+                grade = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("ВВЕДИТЕ ГРУППУ: ");
-                if (!int.TryParse(Console.ReadLine(), out category))
-                {
-                    throw new ArgumentNullException("поле должно содержать числовое значение");
-                }
+                category = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine();
                 student[i] = new(surname, name, patronymic, grade, category);

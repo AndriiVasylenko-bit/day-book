@@ -16,12 +16,13 @@ namespace DayBook
         private static void Main()
         {
             Program program = new Program();
-            program.generateArray();
-            program.bobbleSort();
+            program.GenerateArray();
+            program.BubbleSort();
             Console.WriteLine();
-            program.printArray();
+            program.AdditionOperators();
+            program.PrintArray();
             Console.WriteLine();
-            program.printUnderNumber();
+            program.PrintUnderNumber();
             Console.WriteLine();
             program.searchStudent();
             Console.ReadKey();
@@ -121,6 +122,14 @@ namespace DayBook
                     Console.WriteLine();
                     Console.WriteLine($"СТУДЕНТ [{i}]: {student[i].FullStudent}");
                 }
+            }
+        }
+
+        public void AdditionOperators()
+        {
+            Console.WriteLine(student[0] > student[1]);
+            var Student1 = student[0] + student[1];
+            Console.WriteLine(Student1.FullStudent);
         }
     }
 }

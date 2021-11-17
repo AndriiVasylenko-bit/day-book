@@ -34,7 +34,7 @@ namespace DayBook
                 throw new ArgumentNullException(nameof(patronymic));
             }
 
-            if (0 > progress || progress > 6)
+            if (0 > progress)
             {
                 throw new ArgumentNullException(nameof(progress));
             }
@@ -48,10 +48,7 @@ namespace DayBook
             Name = name;
             Patronymic = patronymic;
             StudentProgress = progress;
-            GroupNumber = group;
-
+            GroupNumber = group;     
         }
-
-
     }
 }

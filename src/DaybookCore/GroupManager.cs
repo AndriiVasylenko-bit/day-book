@@ -24,7 +24,7 @@ namespace DaybookCore
             _groups?.FirstOrDefault
             (
                 group => group.Id == groupId
-            )?.Participants?.Add(student);
+            )?.Participants?.Remove(student);
         }
 
         public static void AddGroup(Group group)

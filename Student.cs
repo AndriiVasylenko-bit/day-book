@@ -1,53 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DayBook
 {
-    public class Student : Person
+    public class Student<T> 
     {
-        public Student(string surname, string name, string patronymic, int progress, int group) : base(surname, name, patronymic, progress, group)
-        {
-        }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Patronymic { get; set; }
+
+        public T StudentProgress { get; set; }
+        public T GroupNumber { get; set; }
         
-        public static Student operator +(Student student1, Student student2)
+
+
+        public string FullStudent =>($"{Surname} {Name} {Patronymic} ОЦЕНКА: {StudentProgress} ГРУППА: {GroupNumber}");
+
+
+            
+        public Student(string surname, string name, string patronymic, T progress, T group)
         {
-            string surname = (student1.Surname + student2.Surname);
-            string name = (student1.Name + student2.Name);
-            string patronymic = (student1.Patronymic + student2.Patronymic);
-            int progress = (student1.StudentProgress + student2.StudentProgress);
-            int groupNumber = (student1.GroupNumber + student2.GroupNumber);
+            if (string.IsNullOrWhiteSpace(surname))
+            {
+                throw new ArgumentNullException(nameof(surname));
+            }
 
-            Student student = new Student(surname, name, patronymic, progress, groupNumber);
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
 
-            return student;
-        }
+            if (string.IsNullOrWhiteSpace(patronymic))
+            {
+                throw new ArgumentNullException(nameof(patronymic));
+            }
 
-        public static Student operator -(Student student1, Student student2)
-        {
-            string surname = (student1.Surname + student2.Surname);
-            string name = (student1.Name + student2.Name);
-            string patronymic = (student1.Patronymic + student2.Patronymic);
-            int progress = (student1.StudentProgress - student2.StudentProgress);
-            int groupNumber = (student1.GroupNumber - student2.GroupNumber);
+            //if (0 > progress)
+            //{
+            //    throw new ArgumentNullException(nameof(progress));
+            //}
 
-            Student student = new Student(surname, name, patronymic, progress, groupNumber);
+            //if (group < 0)
+            //{
+            //    throw new ArgumentNullException(nameof(group));
+            //}
 
-            return student;
-        }
-
-        public static bool operator >(Student student1, Student student2)
-        {
-            bool progress = (student1.StudentProgress > student2.StudentProgress);
-            return progress;
-        }
-
-        public static bool operator <(Student student1, Student student2)
-        {
-            bool progress = (student1.StudentProgress > student2.StudentProgress);
-            return progress;
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            StudentProgress = progress;
+            GroupNumber = group;     
         }
     }
 }

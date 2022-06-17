@@ -1,3 +1,6 @@
+# DayBook
+Console day book.
+
 ![daybook](https://img.shields.io/badge/Daybook-App-orange)
 
 # About
